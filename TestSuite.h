@@ -15,6 +15,9 @@ private:
   bool addBack_AddToEmpty() const;
   bool addBack_IncreaseSize() const;
   bool addBack_AddToBack() const;
+  bool addFront_AddToEmpty() const;
+  bool addFront_IncreaseSize() const;
+  bool addFront_AddToFront() const;
   void printVector(std::vector<int> myVector) const;
 };
 #endif

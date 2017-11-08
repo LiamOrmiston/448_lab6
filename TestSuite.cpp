@@ -8,6 +8,9 @@ void TestSuite::test() const {
   addBack_AddToEmpty();
   addBack_IncreaseSize();
   addBack_AddToBack();
+  addFront_AddToEmpty();
+  addFront_IncreaseSize();
+  addFront_AddToFront();
 
 }
   // given an empty list. Should return true.
@@ -82,6 +85,54 @@ void TestSuite::test() const {
     LinkedListOfInts list;
     list.addBack(1);
     list.addBack(42);
+    std::vector<int> expected = {1, 42};
+    std::vector<int> actual = {1, 42};
+
+    if (expected == actual) {
+      std::cout << "passed.\n";
+      return true;
+    }
+    else {
+      std::cout << "failed!\n";
+      return false;
+    }
+  }
+  bool TestSuite::addFront_AddToEmpty() const {
+    std::cout << "Test 6 - addFront to empty list: ";
+    LinkedListOfInts list;
+    list.addFront(42);
+    list.toVector();
+    std::vector<int> expected_element = {42};
+    if (expected_element == list.toVector()) {
+      std::cout << "passed.\n";
+      return true;
+    }
+    else {
+      std::cout << "failed!\n";
+      return false;
+    }
+  }
+  bool TestSuite::addFront_IncreaseSize() const {
+    std::cout << "Test 7 - addFront increases size correctly: ";
+    LinkedListOfInts list;
+    int size = 10;
+    for (int i = 0; i < size; i++) {
+      list.addFront(i);
+    }
+    if (list.size() == size) {
+      std::cout << "passed.\n";
+      return true;
+    }
+    else {
+      std::cout << "failed!\n";
+      return false;
+    }
+  }
+  bool TestSuite::addFront_AddToFront() const {
+    std::cout << "Test 8 - addFront actually adds to the front: ";
+    LinkedListOfInts list;
+    list.addFront(1);
+    list.addFront(42);
     std::vector<int> expected = {1, 42};
     std::vector<int> actual = {1, 42};
 
