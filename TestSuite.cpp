@@ -5,6 +5,8 @@ TestSuite::TestSuite(){}
 void TestSuite::test() const {
   IsEmpty_EmptyList();
   IsEmpty_PopList();
+  addBack_AddToEmpty();
+  addBack_IncreaseSize();
 }
   // given an empty list. Should return true.
   bool TestSuite::IsEmpty_EmptyList() const {
@@ -31,6 +33,24 @@ void TestSuite::test() const {
     }
     else {
       std::cout << "passed.\n";
+      return false;
+    }
+  }
+
+  // given an empty list, add 1 element.
+  // should return true if the correct element appears, false otherwise.
+  bool TestSuite::addBack_AddToEmpty() const {
+    std::cout << "Test 3 - addBack to empty list: ";
+    LinkedListOfInts list;
+    list.addBack(42);
+    list.toVector();
+    std::vector<int> expected_element = {42};
+    if (expected_element == list.toVector()) {
+      std::cout << "passed.\n";
+      return true;
+    }
+    else {
+      std::cout << "failed!\n";
       return false;
     }
   }
