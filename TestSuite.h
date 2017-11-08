@@ -14,6 +14,7 @@ private:
   bool IsEmpty_PopList() const;
   bool addBack_AddToEmpty() const;
   bool addBack_IncreaseSize() const;
-
+  bool addBack_AddToBack() const;
+  void printVector(std::vector<int> myVector) const;
 };
 #endif

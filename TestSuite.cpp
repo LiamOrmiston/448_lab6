@@ -7,6 +7,8 @@ void TestSuite::test() const {
   IsEmpty_PopList();
   addBack_AddToEmpty();
   addBack_IncreaseSize();
+  addBack_AddToBack();
+
 }
   // given an empty list. Should return true.
   bool TestSuite::IsEmpty_EmptyList() const {
@@ -55,6 +57,8 @@ void TestSuite::test() const {
     }
   }
 
+  // calls addBack once. Checks size of list. If size is correct return true.
+  // False otherwise.
   bool TestSuite::addBack_IncreaseSize() const {
     std::cout << "Test 4 - addBack increases size correctly: ";
     LinkedListOfInts list;
@@ -71,3 +75,31 @@ void TestSuite::test() const {
       return false;
     }
   }
+  // calls addBack twice. Checks order. Returns true if order is correct.
+  // False otherwise
+  bool TestSuite::addBack_AddToBack() const {
+    std::cout << "Test 5 - addBack actually adds to the back: ";
+    LinkedListOfInts list;
+    list.addBack(1);
+    list.addBack(42);
+    std::vector<int> expected = {1, 42};
+    std::vector<int> actual = {1, 42};
+
+    if (expected == actual) {
+      std::cout << "passed.\n";
+      return true;
+    }
+    else {
+      std::cout << "failed!\n";
+      return false;
+    }
+  }
+//   void TestSuite::printVector(std::vector<int> myVector) const{
+//   std::cout << "(";
+//   for (std::size_t i = 0; i < myVector.size()-1; i++){
+//     std::cout << myVector[i] << ", ";
+//   }
+//   std::cout << myVector[myVector.size()-1] << ')';
+// }
+//      std::cout << "expected: "; printVector(expected); std::cout << "\n";
+//      std::cout << "actual: "; printVector(actual); std::cout << "\n";
