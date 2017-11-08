@@ -17,6 +17,8 @@ void TestSuite::test() const {
   removeFront_RemoveOnEmpty();
   removeFront_DecreaseSize();
   removeFront_RemovesTheFront();
+  size_SizeOfEmpty();
+  size_SizeOfPop();
 
 }
   // given an empty list. Should return true.
@@ -265,7 +267,37 @@ void TestSuite::test() const {
       return false;
     }
   }
-
+  // check to see if size() == 0 on empty list. Return true if size is 0.
+  // False otherwise.
+  bool TestSuite::size_SizeOfEmpty() const {
+    std::cout << "Test 15 - size() = 0 on empty list: ";
+    LinkedListOfInts list;
+    if (list.size() == 0) {
+      std::cout << "passed.\n";
+      return true;
+    }
+    else {
+      std::cout << "FAILED!\n";
+      return false;
+    }
+  }
+  // checks size of populated list. Return true if size is 3.
+  // False otherwise
+  bool TestSuite::size_SizeOfPop() const {
+    std::cout << "Test 16 - size() = 3 on list with 3 elements: ";
+    LinkedListOfInts list;
+    list.addFront(3);
+    list.addFront(2);
+    list.addFront(1);
+    if (list.size() == 3) {
+      std::cout << "passed.\n";
+      return true;
+    }
+    else {
+      std::cout << "FAILED!\n";
+      return false;
+    }
+  }
   void TestSuite::printVector(std::vector<int> myVector) const{
   std::cout << "(";
   for (std::size_t i = 0; i < myVector.size()-1; i++){

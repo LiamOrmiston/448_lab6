@@ -24,6 +24,8 @@ private:
   bool removeFront_RemoveOnEmpty() const;
   bool removeFront_DecreaseSize() const;
   bool removeFront_RemovesTheFront() const;
+  bool size_SizeOfEmpty() const;
+  bool size_SizeOfPop() const;
   void printVector(std::vector<int> myVector) const;
 };
 #endif
