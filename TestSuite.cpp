@@ -54,3 +54,20 @@ void TestSuite::test() const {
       return false;
     }
   }
+
+  bool TestSuite::addBack_IncreaseSize() const {
+    std::cout << "Test 4 - addBack increases size correctly: ";
+    LinkedListOfInts list;
+    int size = 10;
+    for (int i = 0; i < size; i++) {
+      list.addBack(i);
+    }
+    if (list.size() == size) {
+      std::cout << "passed.\n";
+      return true;
+    }
+    else {
+      std::cout << "failed!\n";
+      return false;
+    }
+  }
