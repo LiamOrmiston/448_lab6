@@ -6,3 +6,5 @@ it just adds to the front and doesn't bother looking for the back.
 
 Same goes for removeBack and removeFront. Both of these functions check if the
 list is empty and if so, it they will not remove.
+
+However, these all could be seperate bugs. There's no way of me knowing if each function calls isEmpty or not. I'm just assuming that these functions utilize isEmpty and therefore, are not being executed properly.
