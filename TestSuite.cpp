@@ -1,11 +1,14 @@
-##include "TestSuite.h"
+#include "TestSuite.h"
 
-TestSuite::test(){}
+TestSuite::TestSuite(){}
 
 void TestSuite::test() const {
+  IsEmpty_EmptyList();
+  IsEmpty_PopList();
+}
   // given an empty list. Should return true.
   bool TestSuite::IsEmpty_EmptyList() const {
-    std::cout << "Test 1 - isEmpty given an empty list: "
+    std::cout << "Test 1 - isEmpty given an empty list: ";
     LinkedListOfInts list;
     if (list.isEmpty()) {
       std::cout << "passed.\n";
@@ -18,8 +21,8 @@ void TestSuite::test() const {
   }
 
   // given a populated list. Should return false.
-  bool  TestSuite::IsEmpty_PopList() const {
-    std::cout << "Test 2 - isEmpty is given a list of size 1: "
+  bool TestSuite::IsEmpty_PopList() const {
+    std::cout << "Test 2 - isEmpty is given a list of size 1: ";
     LinkedListOfInts list;
     list.addBack(1);
     if (list.isEmpty()) {
@@ -31,4 +34,3 @@ void TestSuite::test() const {
       return false;
     }
   }
-}
