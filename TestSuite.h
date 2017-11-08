@@ -21,6 +21,9 @@ private:
   bool removeBack_RemoveOnEmpty() const;
   bool removeBack_DecreaseSize() const;
   bool removeBack_RemovesTheBack() const;
+  bool removeFront_RemoveOnEmpty() const;
+  bool removeFront_DecreaseSize() const;
+  bool removeFront_RemovesTheFront() const;
   void printVector(std::vector<int> myVector) const;
 };
 #endif

@@ -14,6 +14,9 @@ void TestSuite::test() const {
   removeBack_RemoveOnEmpty();
   removeBack_DecreaseSize();
   removeBack_RemovesTheBack();
+  removeFront_RemoveOnEmpty();
+  removeFront_DecreaseSize();
+  removeFront_RemovesTheFront();
 
 }
   // given an empty list. Should return true.
@@ -25,7 +28,7 @@ void TestSuite::test() const {
       return true;
     }
     else {
-      std::cout << "failed!\n";
+      std::cout << "FAILED!\n";
       return false;
     }
   }
@@ -36,7 +39,7 @@ void TestSuite::test() const {
     LinkedListOfInts list;
     list.addBack(1);
     if (list.isEmpty()) {
-      std::cout << "failed!\n";
+      std::cout << "FAILED!\n";
       return true;
     }
     else {
@@ -58,7 +61,7 @@ void TestSuite::test() const {
       return true;
     }
     else {
-      std::cout << "failed!\n";
+      std::cout << "FAILED!\n";
       return false;
     }
   }
@@ -77,7 +80,7 @@ void TestSuite::test() const {
       return true;
     }
     else {
-      std::cout << "failed!\n";
+      std::cout << "FAILED!\n";
       return false;
     }
   }
@@ -96,7 +99,7 @@ void TestSuite::test() const {
       return true;
     }
     else {
-      std::cout << "failed!\n";
+      std::cout << "FAILED!\n";
       std::cout << "expected: "; printVector(expected); std::cout << "\n";
       std::cout << "actual: "; printVector(actual); std::cout << "\n";
       return false;
@@ -113,7 +116,7 @@ void TestSuite::test() const {
       return true;
     }
     else {
-      std::cout << "failed!\n";
+      std::cout << "FAILED!\n";
       return false;
     }
   }
@@ -129,7 +132,7 @@ void TestSuite::test() const {
       return true;
     }
     else {
-      std::cout << "failed!\n";
+      std::cout << "FAILED!\n";
       return false;
     }
   }
@@ -146,7 +149,7 @@ void TestSuite::test() const {
       return true;
     }
     else {
-      std::cout << "failed!\n";
+      std::cout << "FAILED!\n";
       return false;
     }
   }
@@ -154,7 +157,7 @@ void TestSuite::test() const {
     std::cout << "Test 9 - removeBack returns false on empty list: ";
     LinkedListOfInts list;
     if (list.removeBack()) {
-      std::cout << "failed!\n";
+      std::cout << "FAILED!\n";
       return true;
     }
     else {
@@ -165,9 +168,9 @@ void TestSuite::test() const {
   bool TestSuite::removeBack_DecreaseSize() const {
     std::cout << "Test 10 - removeBack decreases size: ";
     LinkedListOfInts list;
-    list.addBack(10);
-    list.addBack(42);
-    list.addBack(11);
+    list.addFront(10);
+    list.addFront(42);
+    list.addFront(11);
     int expected = 1;
 
     list.removeBack();
@@ -179,7 +182,7 @@ void TestSuite::test() const {
       return true;
     }
     else {
-      std::cout << "failed!\n";
+      std::cout << "FAILED!\n";
       std::cout << "expected: "; printf("%d\n", expected);
       std::cout << "actual: "; printf("%d\n", actual);
       return false;
@@ -188,10 +191,10 @@ void TestSuite::test() const {
   bool TestSuite::removeBack_RemovesTheBack() const {
     std::cout << "Test 11 - removeBack actually removes from the back: ";
     LinkedListOfInts list;
-    list.addBack(1);
-    list.addBack(42);
-    list.addBack(11);
-    std::vector<int> expected = {1, 42};
+    list.addFront(1);
+    list.addFront(42);
+    list.addFront(11);
+    std::vector<int> expected = {42, 1};
     list.removeBack();
     std::vector<int> actual = list.toVector();
 
@@ -200,7 +203,63 @@ void TestSuite::test() const {
       return true;
     }
     else {
-      std::cout << "failed!\n";
+      std::cout << "FAILED!\n";
+      std::cout << "expected: "; printVector(expected); std::cout << "\n";
+      std::cout << "actual: "; printVector(actual); std::cout << "\n";
+      return false;
+    }
+  }
+  bool TestSuite::removeFront_RemoveOnEmpty() const {
+    std::cout << "Test 12 - removeFront returns false on empty list: ";
+    LinkedListOfInts list;
+    if (list.removeFront()) {
+      std::cout << "FAILED!\n";
+      return true;
+    }
+    else {
+      std::cout << "passed.\n";
+      return false;
+    }
+  }
+  bool TestSuite::removeFront_DecreaseSize() const {
+    std::cout << "Test 13 - removeFront decreases size: ";
+    LinkedListOfInts list;
+    list.addFront(10);
+    list.addFront(42);
+    list.addFront(11);
+    int expected = 1;
+
+    list.removeFront();
+    list.removeFront();
+    int actual = list.size();
+
+    if (expected == actual) {
+      std::cout << "passed.\n";
+      return true;
+    }
+    else {
+      std::cout << "FAILED!\n";
+      std::cout << "expected: "; printf("%d\n", expected);
+      std::cout << "actual: "; printf("%d\n", actual);
+      return false;
+    }
+  }
+  bool TestSuite::removeFront_RemovesTheFront() const {
+    std::cout << "Test 14 - removeFront actually removes from the back: ";
+    LinkedListOfInts list;
+    list.addFront(1);
+    list.addFront(42);
+    list.addFront(11);
+    std::vector<int> expected = {42, 1};
+    list.removeFront();
+    std::vector<int> actual = list.toVector();
+
+    if (expected == actual) {
+      std::cout << "passed.\n";
+      return true;
+    }
+    else {
+      std::cout << "FAILED!\n";
       std::cout << "expected: "; printVector(expected); std::cout << "\n";
       std::cout << "actual: "; printVector(actual); std::cout << "\n";
       return false;
