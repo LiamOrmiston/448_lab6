@@ -107,6 +107,7 @@ void TestSuite::test() const {
       return false;
     }
   }
+  // calls addFront to empty list. Return true if element was added.
   bool TestSuite::addFront_AddToEmpty() const {
     std::cout << "Test 6 - addFront to empty list: ";
     LinkedListOfInts list;
@@ -122,6 +123,7 @@ void TestSuite::test() const {
       return false;
     }
   }
+  // calls addFront 10 times. Checks size. Returns true if size is 10.
   bool TestSuite::addFront_IncreaseSize() const {
     std::cout << "Test 7 - addFront increases size correctly: ";
     LinkedListOfInts list;
@@ -138,6 +140,8 @@ void TestSuite::test() const {
       return false;
     }
   }
+  // calls addFront twice. Checks list to make sure elements are in the right
+  // order. Returns true if list is in correct order.
   bool TestSuite::addFront_AddToFront() const {
     std::cout << "Test 8 - addFront actually adds to the front: ";
     LinkedListOfInts list;
@@ -155,6 +159,7 @@ void TestSuite::test() const {
       return false;
     }
   }
+  // calls removeBack on empty list. Should return false.
   bool TestSuite::removeBack_RemoveOnEmpty() const {
     std::cout << "Test 9 - removeBack returns false on empty list: ";
     LinkedListOfInts list;
@@ -167,6 +172,7 @@ void TestSuite::test() const {
       return false;
     }
   }
+  // calls removeBack twice on list of 3. Size should be 1. Returns true if so.
   bool TestSuite::removeBack_DecreaseSize() const {
     std::cout << "Test 10 - removeBack decreases size: ";
     LinkedListOfInts list;
@@ -190,6 +196,8 @@ void TestSuite::test() const {
       return false;
     }
   }
+  // calls removeBack on a list of 3. Returns true if the last element
+  // was removed.
   bool TestSuite::removeBack_RemovesTheBack() const {
     std::cout << "Test 11 - removeBack actually removes from the back: ";
     LinkedListOfInts list;
@@ -211,6 +219,7 @@ void TestSuite::test() const {
       return false;
     }
   }
+  // tries to removeFront on an empty list. Should return false.
   bool TestSuite::removeFront_RemoveOnEmpty() const {
     std::cout << "Test 12 - removeFront returns false on empty list: ";
     LinkedListOfInts list;
@@ -223,6 +232,7 @@ void TestSuite::test() const {
       return false;
     }
   }
+  // calls removeBack twice and checks if the size is 1. Returns true if so.
   bool TestSuite::removeFront_DecreaseSize() const {
     std::cout << "Test 13 - removeFront decreases size: ";
     LinkedListOfInts list;
@@ -246,6 +256,8 @@ void TestSuite::test() const {
       return false;
     }
   }
+  // checks to see if the first element was removed from the list. Return
+  // true if so.
   bool TestSuite::removeFront_RemovesTheFront() const {
     std::cout << "Test 14 - removeFront actually removes from the back: ";
     LinkedListOfInts list;
