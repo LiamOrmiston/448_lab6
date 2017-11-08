@@ -18,6 +18,9 @@ private:
   bool addFront_AddToEmpty() const;
   bool addFront_IncreaseSize() const;
   bool addFront_AddToFront() const;
+  bool removeBack_RemoveOnEmpty() const;
+  bool removeBack_DecreaseSize() const;
+  bool removeBack_RemovesTheBack() const;
   void printVector(std::vector<int> myVector) const;
 };
 #endif
