@@ -19,6 +19,9 @@ void TestSuite::test() const {
   removeFront_RemovesTheFront();
   size_SizeOfEmpty();
   size_SizeOfPop();
+  search_EmptyList();
+  search_PopListTrue();
+  search_PopListFalse();
 
 }
   // given an empty list. Should return true.
@@ -307,6 +310,51 @@ void TestSuite::test() const {
     }
     else {
       std::cout << "FAILED!\n";
+      return false;
+    }
+  }
+  // search an empty list. Should return false.
+  bool TestSuite::search_EmptyList() const {
+    std::cout << "Test 17 - search is false on empty string: ";
+    LinkedListOfInts list;
+    if (list.search(1)) {
+      std::cout << "FAILED!\n";
+      return true;
+    }
+    else {
+      std::cout << "passed.\n";
+      return false;
+    }
+  }
+  // search populated list. Should return true.
+  bool TestSuite::search_PopListTrue() const {
+    std::cout << "Test 18 - search is successful: ";
+    LinkedListOfInts list;
+    list.addFront(0);
+    list.addFront(1);
+    list.addFront(2);
+    if (list.search(1)) {
+      std::cout << "passed.\n";
+      return true;
+    }
+    else {
+      std::cout << "FAILED!\n";
+      return false;
+    }
+  }
+  // search populated list. Should return false.
+  bool TestSuite::search_PopListFalse() const {
+    std::cout << "Test 19 - search is unsuccessful: ";
+    LinkedListOfInts list;
+    list.addFront(0);
+    list.addFront(1);
+    list.addFront(2);
+    if (list.search(10)) {
+      std::cout << "FAILED!\n";
+      return true;
+    }
+    else {
+      std::cout << "passed.\n";
       return false;
     }
   }

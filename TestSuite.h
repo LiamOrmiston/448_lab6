@@ -26,6 +26,9 @@ private:
   bool removeFront_RemovesTheFront() const;
   bool size_SizeOfEmpty() const;
   bool size_SizeOfPop() const;
+  bool search_EmptyList() const;
+  bool search_PopListTrue() const;
+  bool search_PopListFalse() const;
   void printVector(std::vector<int> myVector) const;
 };
 #endif
