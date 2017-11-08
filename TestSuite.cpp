@@ -26,10 +26,10 @@ void TestSuite::test() const {
 }
   // given an empty list. Should return true.
   bool TestSuite::IsEmpty_EmptyList() const {
-    std::cout << "Test 1 - isEmpty given an empty list: ";
+    std::cout << "Test 1 - isEmpty return true given an empty list: ";
     LinkedListOfInts list;
     if (list.isEmpty()) {
-      std::cout << "passed.\n";
+      std::cout << "PASSED.\n";
       return true;
     }
     else {
@@ -40,7 +40,7 @@ void TestSuite::test() const {
 
   // given a populated list. Should return false.
   bool TestSuite::IsEmpty_PopList() const {
-    std::cout << "Test 2 - isEmpty is given a list of size 1: ";
+    std::cout << "Test 2 - isEmpty return false given a list of size 1: ";
     LinkedListOfInts list;
     list.addBack(1);
     if (list.isEmpty()) {
@@ -48,7 +48,7 @@ void TestSuite::test() const {
       return true;
     }
     else {
-      std::cout << "passed.\n";
+      std::cout << "PASSED.\n";
       return false;
     }
   }
@@ -56,13 +56,13 @@ void TestSuite::test() const {
   // given an empty list, add 1 element.
   // should return true if the correct element appears, false otherwise.
   bool TestSuite::addBack_AddToEmpty() const {
-    std::cout << "Test 3 - addBack to empty list: ";
+    std::cout << "Test 3 - element is in list after addBack to empty list: ";
     LinkedListOfInts list;
     list.addBack(42);
     list.toVector();
     std::vector<int> expected_element = {42};
     if (expected_element == list.toVector()) {
-      std::cout << "passed.\n";
+      std::cout << "PASSED.\n";
       return true;
     }
     else {
@@ -74,14 +74,14 @@ void TestSuite::test() const {
   // calls addBack once. Checks size of list. If size is correct return true.
   // False otherwise.
   bool TestSuite::addBack_IncreaseSize() const {
-    std::cout << "Test 4 - addBack increases size correctly: ";
+    std::cout << "Test 4 - list increases size correctly after addBack: ";
     LinkedListOfInts list;
     int size = 10;
     for (int i = 0; i < size; i++) {
       list.addBack(i);
     }
     if (list.size() == size) {
-      std::cout << "passed.\n";
+      std::cout << "PASSED.\n";
       return true;
     }
     else {
@@ -100,7 +100,7 @@ void TestSuite::test() const {
     std::vector<int> actual = list.toVector();
 
     if (expected == actual) {
-      std::cout << "passed.\n";
+      std::cout << "PASSED.\n";
       return true;
     }
     else {
@@ -112,13 +112,13 @@ void TestSuite::test() const {
   }
   // calls addFront to empty list. Return true if element was added.
   bool TestSuite::addFront_AddToEmpty() const {
-    std::cout << "Test 6 - addFront to empty list: ";
+    std::cout << "Test 6 - element is in the list after addFront to empty list: ";
     LinkedListOfInts list;
     list.addFront(42);
     list.toVector();
     std::vector<int> expected_element = {42};
     if (expected_element == list.toVector()) {
-      std::cout << "passed.\n";
+      std::cout << "PASSED.\n";
       return true;
     }
     else {
@@ -135,7 +135,7 @@ void TestSuite::test() const {
       list.addFront(i);
     }
     if (list.size() == size) {
-      std::cout << "passed.\n";
+      std::cout << "PASSED.\n";
       return true;
     }
     else {
@@ -154,7 +154,7 @@ void TestSuite::test() const {
     std::vector<int> actual = list.toVector();
 
     if (expected == actual) {
-      std::cout << "passed.\n";
+      std::cout << "PASSED.\n";
       return true;
     }
     else {
@@ -171,7 +171,7 @@ void TestSuite::test() const {
       return true;
     }
     else {
-      std::cout << "passed.\n";
+      std::cout << "PASSED.\n";
       return false;
     }
   }
@@ -189,7 +189,7 @@ void TestSuite::test() const {
     int actual = list.size();
 
     if (expected == actual) {
-      std::cout << "passed.\n";
+      std::cout << "PASSED.\n";
       return true;
     }
     else {
@@ -212,7 +212,7 @@ void TestSuite::test() const {
     std::vector<int> actual = list.toVector();
 
     if (expected == actual) {
-      std::cout << "passed.\n";
+      std::cout << "PASSED.\n";
       return true;
     }
     else {
@@ -231,7 +231,7 @@ void TestSuite::test() const {
       return true;
     }
     else {
-      std::cout << "passed.\n";
+      std::cout << "PASSED.\n";
       return false;
     }
   }
@@ -249,7 +249,7 @@ void TestSuite::test() const {
     int actual = list.size();
 
     if (expected == actual) {
-      std::cout << "passed.\n";
+      std::cout << "PASSED.\n";
       return true;
     }
     else {
@@ -262,7 +262,7 @@ void TestSuite::test() const {
   // checks to see if the first element was removed from the list. Return
   // true if so.
   bool TestSuite::removeFront_RemovesTheFront() const {
-    std::cout << "Test 14 - removeFront actually removes from the back: ";
+    std::cout << "Test 14 - removeFront actually removes from the front: ";
     LinkedListOfInts list;
     list.addFront(1);
     list.addFront(42);
@@ -272,7 +272,7 @@ void TestSuite::test() const {
     std::vector<int> actual = list.toVector();
 
     if (expected == actual) {
-      std::cout << "passed.\n";
+      std::cout << "PASSED.\n";
       return true;
     }
     else {
@@ -288,7 +288,7 @@ void TestSuite::test() const {
     std::cout << "Test 15 - size() = 0 on empty list: ";
     LinkedListOfInts list;
     if (list.size() == 0) {
-      std::cout << "passed.\n";
+      std::cout << "PASSED.\n";
       return true;
     }
     else {
@@ -305,7 +305,7 @@ void TestSuite::test() const {
     list.addFront(2);
     list.addFront(1);
     if (list.size() == 3) {
-      std::cout << "passed.\n";
+      std::cout << "PASSED.\n";
       return true;
     }
     else {
@@ -322,19 +322,19 @@ void TestSuite::test() const {
       return true;
     }
     else {
-      std::cout << "passed.\n";
+      std::cout << "PASSED.\n";
       return false;
     }
   }
   // search populated list. Should return true.
   bool TestSuite::search_PopListTrue() const {
-    std::cout << "Test 18 - search is successful: ";
+    std::cout << "Test 18 - search is successful when searched element is in the list: ";
     LinkedListOfInts list;
     list.addFront(0);
     list.addFront(1);
     list.addFront(2);
     if (list.search(1)) {
-      std::cout << "passed.\n";
+      std::cout << "PASSED.\n";
       return true;
     }
     else {
@@ -344,7 +344,7 @@ void TestSuite::test() const {
   }
   // search populated list. Should return false.
   bool TestSuite::search_PopListFalse() const {
-    std::cout << "Test 19 - search is unsuccessful: ";
+    std::cout << "Test 19 - search is unsuccessful when searched element is not in the list: ";
     LinkedListOfInts list;
     list.addFront(0);
     list.addFront(1);
@@ -354,7 +354,7 @@ void TestSuite::test() const {
       return true;
     }
     else {
-      std::cout << "passed.\n";
+      std::cout << "PASSED.\n";
       return false;
     }
   }
