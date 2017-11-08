@@ -1,0 +1,6 @@
+I believe that isEmpty() function always returns true. Because of this,
+the addBack function will check to see if the list is empty before looking for
+the end of the list. Since isEmpty() always returns true, it just adds to the
+front and doesn't bother looking for the back to save on time. Same goes for
+removeBack and removeFront. Both of these function check if the list is empty
+and if so, it will not remove.
