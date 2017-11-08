@@ -10,5 +10,6 @@ public:
   TestSuite();
   void test() const;
 private:
-  
+  bool IsEmpty_EmptyList() const;
+  bool IsEmpty_PopList() const;
 }
